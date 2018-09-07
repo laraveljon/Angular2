@@ -1,0 +1,624 @@
+https://angular.io/api/core/Component     -->  Ver documentos o tipi de funsiones interfaces constantes etc... en angular
+
+
+
+https://plnkr.co/                        
+
+https://plnkr.co/edit/tpl:AvJOMERrnz94ekVua0u5?p=preview  ---> Plunker es una pagina que se puede guardar codigo y ejecutarlo enla web
+
+
+
+
+///////////////
+
+Estando en la paginade angular oprimir GET STARTED, despues se mostrara en el texto "Angular CLI"
+
+se oprime despues se abre el cmd se ejecuta el comando ng -v y mostrara angular CLI
+
+
+ya despues :
+Step 2. Create a new project
+
+Open a terminal window.
+
+Generate a new project and skeleton application by running the following commands:
+
+Crear un nuevo proyecto
+
+ng new my-app
+
+se crea una carpeta en el escritorio para que despues se guarden los trabajaon en el escritorio
+
+despues en la terminal y se navegara en la carpeta que se creo pero en la terminal
+
+dentro la carpeta que se creo poner este metacmando :  npm new my-app u npm new holamundo
+
+ya despues se instalaran otros componentes que demorara solo hay que esperar.
+
+despues al terminar en descargar los componentes navegar en "cd holamundo"
+
+y abrir el ng serve --open  o en la abreviatura ng serve -o
+lo anterior sirvecadaguardado que se haga se relaice en  tiempo real
+
+con ello levantara localhost:4200--
+
+/////////////////////////////////////////////////
+Creando entorno en angular 2
+se empeiza por src/app/app.component.html
+
+se elimina todo loquehaya en ese archico y crear como <h1>Nombre: {{nombre}}</h1>
+
+para obneter el dato de {{nombre}} se obtiene del archivo app.comonent.ts
+
+dentro de este archivo se encuentra un decorador "@Component" dentro de ese mismo
+
+esta seleccionando un tag de cualquier nombre llamado <app-alanis></app-alanis> que proviene del index.html
+
+despues templateUrl "./app.component.html" que pinta el cuerpo de pagina y el nombre o cualquier cosa....
+
+despues hay una clase llamada export class AppComponent dentro de ella  se inicializan las variables de los
+
+ nombres y lo apellidos que se ejecutan ahi mismo y los muestra en el archivo de app.component.html
+
+
+////////////////////////////////////////////////////////
+
+Para realizar una cabecera en modo dificil lo primero es crear una carpeta dentro de app se puede llamar
+
+components u dentro de la misma crear una archivo llamado header.component.ts y poner esto dentro del archivo
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-header',
+  //templateUrl: './app.component.html',
+  template: `
+     <h1>Este es el header component</h1>
+   `,
+  //styleUrls: ['./app.component.css']
+})
+export class HeaderComponent {
+  //title = 'app';
+  
+}
+
+al momento de crear esto anguar no sabe que existe este archivo por lo que se deberá poner en el archivo en app.modules.ts
+
+en este archivo se debrea de importar la clase del componente que se haya creado o que se creo en header.component.ts
+import {HeaderComponent} from './components/header.component'; 
+
+ya despues en el decorador@NModule poner el nombre de la clase si ya existe una clase anterior poner una coma...
+
+ya despues en el archivo app.component.html se pone el tag <app-header></app-header> que si se recuerda eso se ve en el decorador 
+
+derl archivo header.component.ts app-header  y asimostrara lo que s ehaya hecho 
+
+LA SEPARACION DE AHI ES :
+CREAER UN NUEVO ARCHIVO LLAMADO header.component.html DENTRO DE app/componets
+
+en el archivo que se creo " header.component.html " elcodigo del navbar e ese mismo archivo
+
+despues nos regresamos ne header.componets.ts y cambiamos lo que esta en el decorador en la parte de template a templateURL'header.component.html
+
+
+EN MODO facil ES 
+
+Para crear uncomponente con metacomando es : ng g c footer
+                                             ng g c body
+                                             ng g c head
+
+la siglas se describen asi angular generar componete footer
+
+la siglas se describen asi angular generar componete body
+
+la siglas se describen asi angular generar componete head
+
+
+//////////////////////////////////////////
+
+
+TENPLATE URL SEPARANDO TEMPLATE EL COMPONENTE
+
+Buscar en boostrap un nav bar al buscar el navbar que querramos se pega el codigo en el archivo de header.comoponets.ts en el
+decorador del template
+
+
+*************************************************************************************************************************************************
+
+PARA CREAR ANGULAR CLI DE TIPO SPA
+
+lo primero sseria instalar los paquetes dentro de la carpeta ...
+
+esto se ve en la pagina de nagular CLI
+
+Generating and serving an Angular project via a development server  los metacomandos serian estos
+
+ng new PROJECT-NAME    -----> Se crea el proyecto ...
+cd PROJECT-NAME        -----> nos cambiamos a la carpeta creada
+ng serve               -----> Se crea el servidor de ejecucion...
+
+
+
+ng new SPA
+cd PROJECT-SPA
+ng serve
+
+
+///// Instaacion de Bootstrap
+
+   dirirguira esa pagina http://getbootstrap.com/
+   e instalar por medio de consola npm install bootstrap@4.0.0-beta
+   
+nos mostrara errores que no se instalo el jquery@>=3.0.0 y  popper.js eso se instalara manuamenete
+para ello uno se ava a jquery.com  y se escribe en metacomando en cosola como "npm install jquery"
+
+  nota : para sacar el @ es con alt +64 en consola
+
+faltaria instalar el https://popper.js.org/  o
+ https://github.com/FezVrasta/popper.js
+
+y el metacomando para instalar seria : npm install popper.js --save
+
+Ya quedaron instalados las librerias de bootstrap uno se va a " .angular.cli.json "
+
+y dentro es este archivo se encontrara : 
+  "styles": [
+        "styles.css"
+      ],
+
+dentro se esto se pondran las referencias de bootstrap
+
+y con ello todo se encuentra ocalizado en node_modules
+
+    "styles": [
+        "styles.css",
+      
+                    "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+      
+              ],
+
+ y ejecutamos ng serve --o
+
+y para JS 
+ es 
+  "scripts": [
+       "../node_modules/popper.js/dist/umd/popper.min.js",
+        
+                     "../node_modules/jquery/dist/jquery.slim.js",
+        
+                     "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+      
+             ],
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////+
+CONSFIGUCARACION DE NAVBAR Y OTROS COMPONENTES
+
+En primera se realiza una carpteta en C:\Users\Alanis\Desktop\angularCLI\SPA\src\assets\img que seria siento la de "iimg"
+y entro en ella se pegan todo tipo de imagenes
+
+y el icono se pondra dentro de C:\Users\Alanis\Desktop\angularCLI\SPA\src\
+
+despues en navbar poner un navbar de bootsrap despues en components.html pegar el tag de app-navbar
+
+despues en home pegar un componete de bootstrap de jumbotron
+
+despues crear un nuevo componete ng g c components/about  y ng g c components/heroes -is ese menos " -is " es para que no pueda instalar las carpetas de styles
+
+
+/////////////////////////////////////////////
+RUTAS DE ANGULAR
+
+Dentro de la carpeta  app crear un archivo llamado app.routes.ts
+
+y dentro de ella solo se escribe ng2-routes para generar 
+
+
+
+import {RouterModule,Routes} from '@angular/router';
+
+const APP_ROUTES: Routes =[
+  {path:'routhePath', component: Component },
+  {path:'**',pathMatch: 'full',redirectTo: ''}
+];
+ export const app_routing = RouterModule.forRoot(APP_ROUTES);
+
+
+y al hacer ng2-import genere : import {Module} from 'path-to-source';
+
+
+
+import {RouterModule,Routes} from '@angular/router';
+import {HomeComponent} from './components/home/home.component';
+
+const APP_ROUTES: Routes =[
+  {path:'home', component: HomeComponent },
+  
+  {path:'**',pathMatch: 'full',redirectTo: 'home'}
+];
+ export const app_routing = RouterModule.forRoot(APP_ROUTES);
+
+
+
+
+y en el app.module se tiene que importar las rutas  ahi  SE IMPORTA LA RUTA
+
+
+import {APP_ROUTING} from './app.routes';
+
+Y PARA PONER la constante que  es APP-ROUTING sepone en :
+
+  imports: [
+    
+           BrowserModule,
+    
+           APP_ROUTING
+  ],
+
+despues en el app.component.html este se pone esto
+
+<app-navbar></app-navbar>
+
+<div class="container">
+  <router-outlet></router-outlet>
+
+</div>
+
+lo que haces  es rederisar la pagina haciendo  <router-outlet></router-outlet> con esto redenriza las rutas
+
+Nota : al poner { useHash:true } comp parametro sirve 	para que soporte una variedad de paginas web :
+
+
+ export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, { useHash:true }); y la liga querdaria a si : http://localhost:4200/#/home
+
+
+Para importar el about es dentro del archivo e routes import {AboutComponent} from './components/about/about.component';  y el de heros es lo mismo
+
+
+//////////////////////////////////////
+
+redirecionando la pagina dentro del archivo navbar.componets.hml
+
+en cada ruta se pone         <a class="nav-link" [routerLink]="['heroes','paginas']">Heroes</a>
+<a class="nav-link" [routerLink]="['home']">Home </a>
+
+y el nombre " [routerLink]="['home']" debe ser igual al archivo que se encuentra en app.router.ts 
+
+const APP_ROUTES: Routes =[
+  {path:'home', component: HomeComponent },
+  {path:'about', component: AboutComponent },
+  {path:'heroes', component: HeroesComponent },
+
+
+////////////////////////////////////////////////////////////////////
+
+Servicios
+
+Dento del archivo app se realiza una carpeta y un archivo llamado servicios/heroes.services.html
+
+y dentro del archivo poner la sintaxis ng2-services y se mostrara esto
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class ServiceNameService {
+
+  constructor() { }
+  
+}
+
+Para empezar este servicio en elconstrucorsehace un console.log() con un mensaje y en app.module.ts
+
+se pone la sintaxis ng2-import y con ello se pone laliga y la exportacion de la clase
+
+import {ServiceNameService} from './servicios/heroes.services';
+
+y en providers[] se pone el nombre de la clase exportada a si:   providers: [HeroesComponent], que en la cual se pondra todos estos servicios
+
+ya espues uno se va a heroes.component.ts	
+
+import { ServiceNameService } from '../../servicios/heroes.services';
+
+Despues en el heroes.component.ts se importaraa	 el ombre del servicio heoresServices y tambien el archivo, ya despues enel construcror
+
+crear variable de tipo private con un nombre e importar el servicio :
+ constructor( private _heroesService:HeroesService) { }
+
+y con ello se mostrara lo que  se muestra en services
+
+Por otraparte eiste el archivo "data" que esta en el archivo de  recursos.... ese data
+
+se pegara el data al crear una variable private  " provate heroes:any[] = 'a qui se pega el data'
+
+esoto deberia ser en el archivo de heroes.services.ts
+
+
+se crea un metodo de tipo get en la cual va retrnar a la clase private heroes.
+
+nos pasamos en el archivo de heroes.component.ts y dento de " ngOnInit() {} "
+
+import { Component, OnInit } from '@angular/core';
+
+import { HeroesService } from '../../servicios/heroes.services';
+
+
+@Component({
+  selector: 'app-heroes',
+  templateUrl: './heroes.component.html',
+  //styles: []
+})
+
+export class HeroesComponent implements OnInit {
+
+       // se realiza un array vacío
+       
+heroes:any[] =[];
+
+  constructor( private _heroesService:HeroesService) {
+
+    
+console.log("Hola mundo Construcor");
+   }
+
+  ngOnInit() {
+   
+ //console.log("Hola mundo ngOnInit");
+    // llama el metodo del arreglo si es igual lama a los heroes que seria elparametro
+   
+ // del constructor y llama lo que es la clase exportada el metodo get que se encentra
+    // en esta clase...
+    
+this.heroes =this._heroesService.getHeroes();
+
+    //seimprime lo que se tre del data
+
+    console.log(this.heroes);
+ 
+ }
+
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Routers y parametros
+
+se realiza en el archivo de heroes.component.html   y poner esto
+      <a href="#" class="btn-outline-dark">Ver mas ....</a>  
+
+quitar el boton que estaba.
+
+y crear otro archivo .... llamado ng g c components/heroe -is
+
+Y como se va hacer para cuando de click al boton " <a href="#" class="btn-outline-dark">Ver mas ....</a>   "
+ de referencia a otro formulario..
+
+pues uno se teniene que ir al archivo de app.route.ts
+
+y dentro del archivo se importa : import {HeroeComponent} from './components/heroe/heroe.component';
+
+const APP_ROUTES: Routes =[
+  {path:'home', component: HomeComponent },
+  {path:'about', component: AboutComponent },
+  {path:'heroes', component: HeroesComponent },
+  {path:'heroe', component: HeroeComponent },
+  {path:'**',pathMatch: 'full',redirectTo: 'home'}
+];
+
+pero para el constante que se esta recibiendo elpath de heroe es preferible que se triga un parametro.
+
+por lo cual se hace est       {path:'heroes/heroe/:id', component: HeroeComponent },
+
+
+Despues al incrporarnos en la de heroes.component.html en el boton crear la ruta :
+
+<a [routerLink]="['heroe',id]" class="btn-outline-dark">Ver mas ....</a>
+
+para sacar el id es crear un index que se crea al princio de div car
+
+  <div class="card" *ngFor="let heroe of heroes; let id = index">
+
+
+  // para que no se mueva a una subpagina si no que se mueva de una forma
+  // de cambiando la url deforma raiz
+   
+" archivo de app.routes.ts
+{path:'heroe/:id', component: HeroeComponent },
+
+y  heroes.component.html 
+
+<a [routerLink]="['/heroe',id]" class="btn-outline-dark">Ver mas ....</a>
+
+Y para hacerlo en boton se relaiza lo siguiente
+
+  <button (click)="verHeroe(id)"
+      type="button" class="btn btn-outline-dark btn-block">Ver mas...</button>
+
+y en el verHeroe(id)
+
+poner esa funsion en el archivo de heroes.comoponet.ts
+
+
+  verHeroe( idx:number ){
+
+    console.log(idx);
+
+  }
+
+despues en este mismo archivo importar dos cosas
+
+import {Router} from '@angular/router';
+
+
+constructor( private _heroesService:HeroesService,
+               private router:Router
+
+               ) {
+
+
+  verHeroe( idx:number ){
+
+    console.log(idx);
+    this.router.navigate( ['/heroe',idx] );
+
+  }
+
+
+
+///////////////////////////////////////////////
+
+Recibiendoparametros por URL - ActivateRoute
+
+
+en el archivo de heroe..components.ts se importa el router Activated
+
+import { ActivatedRoute} from '@angular/router';
+
+
+y mediante en el constructor :
+
+constructor( private _activatedRoute:ActivatedRoute) {
+    
+    //params es un observador de parametros
+    
+    this._activatedRoute.params.subscribe( params=>{
+       console.log(params['id'])
+     });
+ 
+ }
+
+
+Y despues pues para poder mandar ese id en particular...  se realiza dentro del heroes.service.ts
+
+otro metodo llamado getHeroe que en la cual se tendra un parametro donde se recibe el ID
+
+ getHeroe(idx:string){
+     return this.heroes[idx]
+   }
+
+regresado al archivo de heroe..components.ts se importa el heroes.services.ts con su clase de ecportacion....
+
+
+import {HeroesService} from '../../servicios/heroes.services';
+
+pasa si dentro de la clase HeroeComponet poner un pbjeto de tipo any
+
+y despues dentro del constructor importar constructor( private activatedRoute:ActivatedRoute,
+               private _heroesServices:HeroesService
+     ) {
+
+y dentro del constructor se llama el objeto creado que heroe, despues la importacion de heroesServices en la cual invoca el metodo de getHeroe y el params con el id
+
+ this.heroe=this._heroesServices.getHeroe( params['id']);
+
+
+
+/////////////////////////////////////////////
+Para relizar una busqueda de un heroe
+
+en el archivo de navbar.component.html en el boton 
+
+<input class="form-control mr-sm-2" type="text" placeholder="Buscar Héroe" aria-label="Search">
+
+poner eventos dentro de esta etiqueta (keyup.enter)="buscarHeroe(buscarTexto.value" y #buscartexo 
+<input class="form-control mr-sm-2" type="text" placeholder="Buscar Héroe" (keyup.enter)="buscarHeroe(buscarTexo.value)"  #buscarTexo>
+y en el boton ponerlo tipo button y se pone el evento
+  <button (click) ="buscarHeroe(buscarTexo.value)"
+       class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar Héroe</button>
+
+Ya despues en el en el archivo de navbar.component.ts poner un evento
+
+U en el archivo de servicios de heroes.servicios.ts realizar una ua funsion de buscar heroes.
+ // esta funsion regresara un arreglo de heroe
+    buscarHeroes( termino:string):Heroe[]{
+     // se va relaizar un nuevo arreglo
+     let heroesArr:Heroe[] = [];
+     //El toLowerCase() método devuelve el valor en minúsculas de la cadena que realiza la llamada.
+     termino =termino.toLowerCase();
+
+     for(let heroe of this.heroes){
+       let nombre = heroe.nombre.toLowerCase();
+       //si ecentra el termino de este nombre
+       if( nombre.indexOf( termino) >=0){
+         heroesArr.push( heroe);
+       }
+     }
+     return heroesArr;
+   }
+
+
+Se raliza un ambiente que al momento de buscar un heroe reaizar un nuevo archivo
+
+ng  g c components/buscador -is
+
+
+al crear ese rchivo lo impotamos en el app.router.ts en la cual simportamos la ruta del componente buscador
+
+import {HeroeComponent} from './components/heroe/heroe.component';
+{path:'buscar/:termino', component: BuscadorComponent },
+
+
+
+
+  buscarHeroe( termino:string){
+    console.log( termino);
+  }
+
+
+
+
+
+
+
+
+
+//////////
+
+boostrap con 
+angular http://getbootstrap.com/
+
+y copiar Bootstrap CDN que seria todas las librerias de CCS y JS
+
+despues se pegara esas librerias en el archivo index.html dentro de la carpeta src
+abajo del ico dentro del head
+
+Para hacer otro nuevo componente ---> dentro de la carpeta app utilizar los archivos app.component.html y dentro de ese archivo poner como cabecera <app-header></app-header>
+
+dentro de app crear una carpeta llamada components y dentro de esa carpeta realizar un archivo con el nombre header.component.ts
+y hacer eso : 
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-header',
+  //templateUrl: './app.component.html',
+  template: `
+     <h1>Este es el header component</h1>
+   `,
+  //styleUrls: ['./app.component.css']
+})
+export class HeaderComponent {
+  //title = 'app';
+  
+}
+
+y en el archivo app.module.ts crear u 
+import { HeaderComponent } from './components/header.component';
+
+
+Para crear uncomponente con metacomando es : ng g c footer
+                                             ng g c body
+                                             ng g c head
+
+
+
+
+
+NOta: En la vida real no seinstalara la gan cantidad de carpetas que se descargo al momento que se haya echo 
+
+      este metacomando : "npm new my-app" solamente es para el desarrollo...
+   
+
+
+--save dev  ---> Desarrollo
+--save      ---> Produccion

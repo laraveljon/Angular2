@@ -1,0 +1,10 @@
+NOTA ANGULAR CON ATOM DE CONSOLA
+
+para poder guardar los datos autoaticamente o tiempo real se realiza
+este comando dentro del archivo de "app" o cualquen nombre que se haya creado
+tsc app -w  
+ antes de que se ahaga eso es crear un json  tsc --init
+
+tambien se puede hacer un guardado ya creado el json y el metacomando es
+
+tsc dentro del archivo
